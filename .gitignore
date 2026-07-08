@@ -1,0 +1,13 @@
+.vs/
+**/.vs/
+bin/
+**/bin/
+obj/
+**/obj/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+*.csproj.user

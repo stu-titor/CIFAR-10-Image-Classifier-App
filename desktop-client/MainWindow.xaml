@@ -1,0 +1,97 @@
+﻿<Window x:Class="CifarInterface.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		mc:Ignorable="d"
+		Title="CIFAR-10 Classifier"
+		Height="640"
+		Width="420"
+		Background="#F3F6FB"
+		WindowStartupLocation="CenterScreen"
+		ResizeMode="CanMinimize">
+	<Window.Resources>
+		<Style TargetType="Button">
+			<Setter Property="Background" Value="#2563EB" />
+			<Setter Property="Foreground" Value="White" />
+			<Setter Property="BorderThickness" Value="0" />
+			<Setter Property="Padding" Value="12,10" />
+			<Setter Property="Margin" Value="0,0,0,12" />
+			<Setter Property="FontSize" Value="14" />
+			<Setter Property="FontWeight" Value="SemiBold" />
+			<Setter Property="Cursor" Value="Hand" />
+		</Style>
+		<Style TargetType="TextBox">
+			<Setter Property="Padding" Value="12,10" />
+			<Setter Property="BorderBrush" Value="#D7DDEA" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Setter Property="Background" Value="White" />
+			<Setter Property="FontSize" Value="13" />
+		</Style>
+	</Window.Resources>
+
+	<Grid Margin="22">
+		<Border Background="White"
+				CornerRadius="18"
+				Padding="24"
+				BorderBrush="#E5EAF3"
+				BorderThickness="1">
+			<Border.Effect>
+				<DropShadowEffect Color="#1F2937" BlurRadius="20" ShadowDepth="4" Opacity="0.10" />
+			</Border.Effect>
+
+			<StackPanel VerticalAlignment="Center">
+				<TextBlock Text="CIFAR-10 Classifier"
+						   FontSize="24"
+						   FontWeight="Bold"
+						   Foreground="#111827"
+						   HorizontalAlignment="Center"
+						   TextAlignment="Center" />
+				<TextBlock Text="Pick an image or paste a URL to classify it."
+						   Margin="0,8,0,20"
+						   FontSize="13"
+						   Foreground="#6B7280"
+						   HorizontalAlignment="Center"
+						   TextAlignment="Center" />
+
+				<Button x:Name="BtnPickFile"
+						Content="Pick Image File"
+						Click="BtnPickFile_Click" />
+
+				<TextBox x:Name="TxtUrl"
+						 Text="Or paste an image URL here"
+						 Foreground="Gray"
+						 GotFocus="TextUrlFocused"
+						 LostFocus="TextUrlUnfocused"
+						 TextChanged="TxtUrlType"
+						 Margin="0,0,0,12" />
+
+				<Border Background="#F8FAFC"
+						BorderBrush="#E5E7EB"
+						BorderThickness="1"
+						CornerRadius="14"
+						Padding="12"
+						Margin="0,0,0,16">
+					<Image x:Name="ImgPreview"
+						   Height="170"
+						   Stretch="Uniform"
+						   HorizontalAlignment="Center" />
+				</Border>
+
+				<TextBlock x:Name="TxtResult"
+						   Text=""
+						   TextAlignment="Center"
+						   FontSize="16"
+						   FontWeight="SemiBold"
+						   Foreground="#1D4ED8"
+						   Margin="0,0,0,16" />
+
+				<Button x:Name="BtnClassify"
+						Content="Classify Image"
+						Click="BtnClassify_Click"
+						Background="#0F766E"
+						Margin="0,0,0,0" />
+			</StackPanel>
+		</Border>
+	</Grid>
+</Window>
