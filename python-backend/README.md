@@ -17,10 +17,10 @@ A compact CIFAR-10 project built around a custom PyTorch CNN that reaches **91.0
 ├── src/
 │   ├── CNN.py
 │   ├── app.py
+|   ├── main.ipynb
 │   ├── main.py
 |   ├── simplerunner.py
 │   └── trained_net_91.01.pth
-├── main.ipynb
 ├── animal.jpg
 ├── uni.jpg
 └── README.md
